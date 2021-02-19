@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+        body{
+            position: relative; /* required */
+        }
+        .list-group{
+            position: sticky; /* Supported in latest version of Chrome, Firefox, Safari, Opera and Edge browsers */
+            top: 15px;
+        }
+        </style>
+    </head>
+    <body data-spy="scroll" data-offset="15" data-target="#myScrollspy">
+
+        <nav id="top" class="navbar navbar-expand-sm justify-content-end sticky-top">
+            <ul class="nav" style="background-color: white;">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="download.html">Download</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-sm-9 offset-sm-3">
+                    <h1>Introducing Lure</h1>
+                    <p class="lead"><i>A probe design tool for fishing Hi-C data</i></p>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-sm-3" id="myScrollspy">
+                    <div class="list-group">
+                        <a class="list-group-item list-group-item-action active" href="#section1">Introduction</a>
+                        <a class="list-group-item list-group-item-action" href="#section2">Quick Start</a>
+                        <a class="list-group-item list-group-item-action" href="#section3">How to Cite</a>
+                        <a class="list-group-item list-group-item-action" href="#section4">Visualization & UX</a>
+                        <a class="list-group-item list-group-item-action" href="#section5">How it Works</a>
+                        <a class="list-group-item list-group-item-action" href="#section6">Validation</a>
+                        <a class="list-group-item list-group-item-action" href="#section7">FAQs</a>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div id="section1">
+                        <h1>Introducing Lure</h1>
+                        <p class="lead"><i>A probe design tool for fishing Hi-C data</i></p>
+                        <p>Lure is a fast, user-friendly web application for designing oligonucleotide probes for hybrid capture Hi-C (Hi-C<sup>2</sup>). Developed by the <a href='http://aidenlab.org/' target='_blank'> Aiden Lab </a> , Hi-C<sup>2</sup> allows scientists to enrich Hi-C data in a small, continuous genomic region <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4664323/' target='_blank'>(Sanborn et al. 2015)</a>. Lure is tailored specifically to Hi-C<sup>2</sup>, designing the optimal probes for Hi-C library enrichment.</p>
+                    </div>
+                    <hr>
+                    <div id="section2">
+                        <h2>Quick Start</h2>
+                        <p>Designing probes with Lure is fast, easy, and requires no downloads or dependencies. To get started:</p>
+                        <ol>
+                            <li>Select a genome (ex: Human: hg19)</li>
+                            <li>Enter your target region (ex: chr3:133,000,000-133,010,000)</li>
+                            <li>Choose your Restriction Enzyme (ex: ^GATC,MobI)</li>
+                            <li>Design Probes!</li>
+                        </ol>
+                        <img src="img/quickstart.gif" style="display:block; margin-left: auto; margin-right: auto;" width="100%" height="100%">
+                        <p>The results can then be visualized, inspected, and downloaded.</p>
+                    </div>
+                    <hr>
+                    <div id="section3">
+                        <h2>How to Cite</h2>
+                        <p>Lure was developed in the <a href='http://phanstiel-lab.med.unc.edu/' target='_blank'> Phanstiel Lab </a> at UNC by <a href='https://ericscottdavis.com/' target='_blank'>Eric Davis</a>, Erika Deoudes, Craig Wenger, and Doug Phanstiel.</p>
+                        <p>If you use this webapp to design your probes, please cite:</p>
+                        <div style="background: #dde4ee; padding:15px 20px;">
+                            <p>Davis ES, Deoudes EM, Thulson EA, Kramer N, Wenger C and Phanstiel DH. Lure: A Probe Design Tool for Hybrid-Capture Hi-C. <i>In Progress</i>. 2019.</p>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <div id="section4">
+                        <h2>Visualization and User Experience</h2>
+                        <p>The lure dashboard contains a region view and a data view. Together these components allow the user to explore the data at all levels of detail. The region view serves as the driver for the user experience. Here, the user can visualize probes in the context of their genomic location. The user can use intuitive controls such as panning and zooming to inspect the distribution and location of probes.</p>
+                        <p>The region view displays each oligonucleotide probe according to its genomic position on the x-axis, colored by quality score, and stratified on the y-axis by several different user-chosen metrics including: GC Content, AT Content, Distance from Restriction Site, Repetitive Bases, and Quality Score. The user can zoom and pan to adjust the number of probes displayed in the region view. To inspect an individual probe, a suer can hover over the probe and get details-on-demand in the form of a tooltip with the chromosome, start position, end position, a slice of the first and last 10 characters of the sequence, GC content percentage, number of repetitive bases, and the quality score. This allows the user to inspect individual probes for their characteristics while still maintaining location context.</p>
+                        <img src="img/regionView.png" style="display:block; margin-left: auto; margin-right: auto;" width="100%" height="100%">
+                        <p>In addition to viewing the probes in detail, the user can also inspect how the probes have been designed according to the surrounding context. As the user continues to zoom, the surrounding sequence context begins to appear just above the x-axis. This provides sequence context when the user is deeply zoomed-in, without becoming distracting at larger scales. Advanced plotting options provide additional sequence and design context. Users can toggle on and off the ability to overlay restriction sites and repetitive regions.</p>
+                        <p>Finally, the data view provides a detailed listing of all properties of each probe. Users can search, sort, and filter the data table or download the results.</p>
+                    </div>
+                    <hr>
+                    <div id="section5">
+                        <h2>How it Works</h2>
+                        <h4>Implementation</h4>
+                        <p>The Lure web application is implemented with the Express Framework, a Node.js back-end, and a D3.js front-end. To generate the data, it utilizes thethe <a href='https://github.com/PhanstielLab/lure'>Lure command line tool</a>, which is written primarily using BASH and R. It utilizes several command line tools to identify and fragment the region of interest (ROI) by restriction site (<a href='https://www.bioinformatics.babraham.ac.uk/projects/hicup/'>HiCUP - Hi-C User Pipeline</a>), extract genomic fragments (<a href='http://bedtools.readthedocs.io/en/latest/'>Bedtools</a>), and assess potential probes in parallel (<a href='https://www.gnu.org/software/parallel/'>GNU Parallel</a>). The diagram below outlines LURE's workflow:</p>
+                        <img src="img/flow_diagram2.png" style="display:block; margin-left: auto; margin-right: auto;" width="80%" height="80%">
+                        <h4>Selection</h4>
+                        <p>Criteria for selecting probes were modeled after Sanborn et al. (2015) where they outline their Hi-C<sup>2</sup> method. Briefly, potential probes were identified upstream and downstream of each restriction site. All potential probes were scored for repetitive bases, GC content, and distance from restriction site. Each probe was assigned a "Pass Number" (0-3) for overall quality according to the scheme below:</p>
+                        <img src="img/selectionTable.png" style="display:block; margin-left: auto; margin-right: auto;" width="100%" height="100%">
+                        <p>Selection criteria relax as pass number increases, making the highest quality probes (passing the most restrictive criteria) pass 0 and lowest quality probes (passing the least strict criteria) pass 3.</p>
+                    </div>
+                    <div id="section6">
+                        <h2>Validation</h2>
+                        <p>Coming Soon!</p>
+                    </div>
+                    <div id="section7">
+                        <h2>FAQs</h2>
+                        <p>Coming Soon!</p>
+                    </div>
+                    <br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            // Add smooth scrolling on all links inside the navbar
+            $("#myScrollspy a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+                });
+
+            } // End if
+
+            });
+            
+        </script>
+
+    </body>
+</html>                            

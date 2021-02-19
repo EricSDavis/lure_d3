@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <!-- <meta charset="utf-8"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+        <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+
+<body>
+
+    <nav id="top" class="navbar navbar-expand-sm justify-content-end">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="download.html">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="text-center">
+        <img src="img/Lure_logo_new.png" width="400">
+        <br>
+        <br>
+    </div>
+
+    <div id="parameters" class="container sticky-top" style="background-color: white;">
+        <form id="runLure">
+            <br>
+            <div class="row">
+                <div class="col-sm" id="genomeDiv">
+                    <label for="genome">Genome</label> 
+                    <select type="text" id="genome" name="genome" class="form-control">
+                        <option>Human: hg19</option>
+                        <option>Human: hg38</option>
+                    </select>
+                    <small class="text-muted">Select genome build</small>
+                </div>
+                <div class="col-sm" id="targetRegionDiv">
+                    <label for="targetRegion">Target Region</label> 
+                    <input type="text" id="targetRegion" name="targetRegion" class="form-control" placeholder="chr8:133000000-135000000" required pattern="chr[1-9][0-9]{0,1}:[0-9].*-[0-9].*" oninput="validate(this)">
+                    <small class="text-muted">Enter genomic coordinates</small>
+                </div>
+                <div class="col-sm" id="restrictionEnzymeDiv">
+                    <label for="restrictionEnzyme">Restriction Enzyme</label> 
+                    <select type="text" id="restrictionEnzyme" name="restrictionEnzyme" class="form-control">
+                        <option>^GATC, MboI</option>
+                        <option>A^AGCTT, HindIII</option>
+                    </select>
+                    <small class="text-muted">Select restriction digest enzyme</small>
+                </div>
+                <div class="col-xs" id="designProbesDiv">
+                    <button id="designProbes" name="designProbes" class="btn btn-outline-primary" type="submit" style="margin-top:32px;">
+                        <span>Design</span>
+                    </button>
+                </div>
+                <div class="col-xs" id="downloadProbesDiv" style="padding-left: 5px;">
+                    <button id="downloadProbes" name="downloadProbes" class="btn btn-outline-primary" type="submit" formaction="/download" formmethod="GET" style="margin-top:32px;" disabled>
+                        <span>Download</span>
+                    </button>
+                </div>
+            </div>
+        </form>      
+        
+    </div>
+
+    <br><br>  
+
+    <script src="js/d3.js"></script>
+    <script src="js/main.js"></script>
+
+    
+</body>
+
+</html>
